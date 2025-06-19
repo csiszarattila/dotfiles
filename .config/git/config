@@ -1,0 +1,19 @@
+[user]
+        name = Csiszár Attila
+        email = csiszar.ati@gmail.com
+[push]
+        default = current
+[core]
+        autocrlf = false
+        whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+        filemode = false        
+[merge]
+	conflictstyle = diff3
+
+[interactive]
+    diffFilter = delta --color-only
+
+[alias]
+        co = checkout
+[color]
+	ui = auto
