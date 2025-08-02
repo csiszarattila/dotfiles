@@ -25,6 +25,7 @@ setopt hist_ignore_all_dups share_history hist_ignore_space append_history inc_a
 # OPTS
 setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
 setopt no_case_glob no_case_match # make cmp case insensitive
+setopt globdots # show hidden elements on comp lists
 
 # KEY BINDINGS
 bindkey "^a"    beginning-of-line
@@ -45,3 +46,4 @@ source <(fzf --zsh)
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias g='git'
+alias t='tig'
