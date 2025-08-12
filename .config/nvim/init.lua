@@ -6,6 +6,7 @@ vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.signcolumn = 'yes'
 vim.g.mapleader = " "
+vim.o.winborder = "rounded"
 
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
@@ -28,5 +29,5 @@ vim.pack.add({
 
 vim.cmd("colorscheme catppuccin-macchiato")
 
-vim.lsp.enable('clangd')
+vim.lsp.enable({'clangd', 'lua_ls'})
 
