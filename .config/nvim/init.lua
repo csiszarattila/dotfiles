@@ -25,9 +25,11 @@ vim.diagnostic.config({
 vim.pack.add({
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/catppuccin/nvim' },
+    { src = 'https://github.com/echasnovski/mini.nvim' },
 })
 
 vim.cmd("colorscheme catppuccin-macchiato")
 
 vim.lsp.enable({'clangd', 'lua_ls'})
 
+require('mini.statusline').setup()
