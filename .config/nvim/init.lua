@@ -26,6 +26,7 @@ vim.pack.add({
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/catppuccin/nvim' },
     { src = 'https://github.com/echasnovski/mini.nvim' },
+    { src = 'https://github.com/lewis6991/gitsigns.nvim' },
 })
 
 vim.cmd("colorscheme catppuccin-macchiato")
@@ -33,3 +34,4 @@ vim.cmd("colorscheme catppuccin-macchiato")
 vim.lsp.enable({'clangd', 'lua_ls'})
 
 require('mini.statusline').setup()
+require('gitsigns').setup()
