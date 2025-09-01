@@ -45,5 +45,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source <(fzf --zsh)
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles_tig='GIT_DIR=$HOME/.dotfiles/ GIT_WORK_TREE=$HOME t'
 alias g='git'
 alias t='tig'
