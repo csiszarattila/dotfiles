@@ -11,6 +11,7 @@ vim.o.winborder = "rounded"
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
 vim.keymap.set('n', '<C-d>', ':t.<CR>')
+vim.keymap.set('i', 'jj', '<ESC>')
 
 vim.api.nvim_create_autocmd("Filetype", {
   pattern = "make",
