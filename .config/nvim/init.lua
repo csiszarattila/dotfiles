@@ -8,14 +8,6 @@ vim.opt.signcolumn = 'yes'
 vim.g.mapleader = " "
 vim.o.winborder = "rounded"
 
-vim.keymap.set('n', '<leader>w', ':write<CR>')
-vim.keymap.set('n', '<leader>q', ':quit<CR>')
-vim.keymap.set('n', '<C-d>', ':t.<CR>')
-vim.keymap.set('i', 'jj', '<ESC>')
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
-
 vim.api.nvim_create_autocmd("Filetype", {
   pattern = "make",
   callback = function()
@@ -44,3 +36,12 @@ vim.lsp.enable({'clangd', 'lua_ls'})
 require('mini.statusline').setup()
 require('gitsigns').setup()
 require('nvim-tree').setup()
+
+vim.keymap.set('n', '<leader>w', ':write<CR>')
+vim.keymap.set('n', '<leader>q', ':quit<CR>')
+vim.keymap.set('n', '<C-d>', ':t.<CR>')
+vim.keymap.set('i', 'jj', '<ESC>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
+
