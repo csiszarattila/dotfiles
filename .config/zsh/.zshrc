@@ -28,9 +28,9 @@ setopt globdots # show hidden elements on comp lists
 
 # KEY BINDINGS
 bindkey "^a"    beginning-of-line
-bindkey "\e[1~" beginning-of-line
+bindkey "\e[H" beginning-of-line
 bindkey "^e"    end-of-line
-bindkey "\e[4~" end-of-line
+bindkey "\e[F" end-of-line
 bindkey "^k"    kill-line
 bindkey "^j"    backward-word
 bindkey "^k"    forward-word
