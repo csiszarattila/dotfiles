@@ -3,9 +3,8 @@ autoload -U colors && colors
 
 # Blue background, white text: @ /curr/ent/directory
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{blue}%F{white}%B@ %~ %b%f%k${NEWLINE}$>"
+PROMPT="${NEWLINE}%K{yellow}%F{black}%* %K{blue}%F{white}%B %~ %b%f%k${NEWLINE}$>"
 # Display current time (hh:mm:ss) on right side
-RPROMPT='%*' 
 
 # COMPLETION
 autoload -Uz compinit && compinit
