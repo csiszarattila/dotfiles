@@ -38,6 +38,7 @@ bindkey "\e[3~" delete-char
 bindkey "\e^?"  backward-kill-word 
 
 # SYNTAX HIGHLIGHTING
+bindkey "\e[2~" quoted-insert
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # FZF
