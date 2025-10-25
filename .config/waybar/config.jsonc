@@ -1,17 +1,18 @@
 {
+  "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": [],
+  "modules-center": [
+    "clock",
+  ],
   "modules-right": [
-    "network",
-    "pulseaudio",
-    "battery",
+    "tray", 
     "hyprland/language",
-    "clock"
+    "group/settings",
+    "battery"
   ],
   "hyprland/workspaces": {
-    "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
       "default": "",
@@ -21,7 +22,43 @@
       "1": [],
       "2": [],
       "3": []
+    },
+    "on-click": "activate",
+  }, 
+  "group/settings": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+    },
+    "modules": [
+        "custom/settings",
+        "wireplumber#speaker",
+        "wireplumber#mic"
+    ]
+  },
+  "custom/settings": {
+      "format": " ",
+      "tooltip": false
+  },
+  "wireplumber#speaker": {
+    "node-type": "Audio/Sink",
+    "format": "{icon} {volume}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "kitty --hold -e wiremix",
+    "tooltip-format": "{source_desc} {volume}%",
+    "scroll-step": 5,
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": [""]
     }
+  },
+  "wireplumber#mic": {
+    "node-type": "Audio/Source",
+    "format": "{volume}",
+    "format-muted": " Muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "tooltip-format": "{source_desc} {volume}%",
+    "scroll-step": 5
   },
   "hyprland/language": {
     "format": "{}",
@@ -29,32 +66,39 @@
     "format-hu": "hu"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
-    "format-discharging": "{icon}",
-    "format-charging": "{icon}",
-    "format-plugged": "",
-    "format-icons": {
-      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-    "format-full": "󰂅",
+    "format": "{capacity}%",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
-    "interval": 5,
+    "interval": 1,
     "states": {
       "warning": 20,
       "critical": 10
     }
   },
-  "pulseaudio": {
-    "format": "{icon}",
-    "on-click": "$TERMINAL --class=Wiremix -e wiremix",
-    "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", ""]
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M}",
+    "tooltip-alt": "{:%Y %B %d, %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "left",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#f4dbd6'><b>{}</b></span>",
+        "days":       "<span color='#f5bde6'>{}</span>",
+        "weeks":      "<span color='#a6da95'>{}</span>",
+        "weekdays":   "<span color='#ee99a0'><b>{}</b></span>",
+        "today":      "<span color='#f5bde6' background='#ed8796'><b>{}</b></span>"
+      }
+    },
+    "actions":  {
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
     }
+  },
+  "tray": {
+      "icon-size": 15
   }
 }

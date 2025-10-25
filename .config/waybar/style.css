@@ -1,10 +1,85 @@
 @import "macchiato.css";
+@define-color theme-main-color @peach;
+@define-color theme-font-color @crust;
+
+/*
+@import "latte.css";
+@define-color theme-main-color @rosewater;
+@define-color theme-font-color #232634;
+*/
 
 * {
+    color: @theme-font-color;
+    font-family: "Jetbrains Mono", monospace;
+    font-size: 16px;
+}
+
+#waybar {
+    background: transparent;
+}
+
+#workspaces label {
+    color: @theme-main-color;
+    background: transparent;
+}
+
+.modules-center {
+    background: @theme-main-color;
+    border-radius: 1em;
+    font-weight: bold;
+    padding: 0 0.5em;
+}
+
+.modules-right {
+    background: @theme-main-color;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    font-weight: bold;
+    padding-left:0.5em;
+}
+
+#settings,
+#battery {
+    padding-left: 0.5em;
+}
+
+#wireplumber.speaker,
+#wireplumber.mic {
+    padding-left: 0.5em;
+}
+
+#wireplumber.mic {
+    padding-right: 0.5em;
+}
+
+#wireplumber.muted {
+    color: #a14e4e;
+}
+
+#battery {
+    background: @green;
+    border-radius: 1em 0 0 1em;
+    padding-right: 0.5em;
+}
+
+#battery.warning {
+    background: @red;
+}
+
+#battery.critical {
+    background: #a14e4e;
+    color: @subtext1;
+}
+
+tooltip {
+    border-radius: 15px;
+    background-color: @mantle;
+    padding: 8px 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
     color: @text;
 }
 
-window#waybar {
-    background-color: shade(@base, 0.9);
-    border: 2px solid alpha(@crust, 0.3);
+tooltip label {
+    color: @text;
+    font-weight: bold;
 }
