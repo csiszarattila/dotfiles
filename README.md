@@ -11,3 +11,7 @@ dotfiles checkout
 ~~~
 sudo ln -s ~/bin/omarchy-cmd-screenshot /usr/local/bin
 ~~~
+
+# Required packages
+
+pacman -S mako

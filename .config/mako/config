@@ -1,0 +1,11 @@
+anchor=top-right
+font=Jetbrains Mono, monospace 12
+background-color=#f5a97f
+text-color=#181926
+width=450
+height=600
+border-size=0
+border-radius=15
+icons=1
+max-icon-size=32
+default-timeout=5000
