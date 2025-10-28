@@ -19,7 +19,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history"
-setopt hist_ignore_all_dups share_history hist_ignore_space append_history inc_append_history
+setopt hist_ignore_all_dups share_history hist_ignore_space 
 
 # OPTS
 setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
