@@ -44,4 +44,6 @@ vim.keymap.set('i', 'jj', '<ESC>')
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
-
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { remap = false, desc = "Unindent current line" })
+vim.keymap.set('v', '<S-Tab>', '<gv', { remap = false, desc = "Unindent selection and reselect" })
+vim.keymap.set('v', '<Tab>', '>gv', { remap = false, desc = "Indent selection and reselect" })
