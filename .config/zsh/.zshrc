@@ -1,9 +1,15 @@
 # Load color definitions
 autoload -U colors && colors
 
+# Branch name on prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '%b'
+setopt PROMPT_SUBST
+
 # Blue background, white text: @ /curr/ent/directory
 NEWLINE=$'\n'
-PROMPT="${NEWLINE}%K{yellow}%F{black}%* %K{blue}%F{white}%B %~ %b%f%k${NEWLINE}$>"
+PROMPT="${NEWLINE}%K{yellow}%F{black}%* %K{blue}%F{white}%B %~ %K{174}${vcs_info_msg_0_}%b%f%k${NEWLINE}$>"
 # Display current time (hh:mm:ss) on right side
 
 # COMPLETION
